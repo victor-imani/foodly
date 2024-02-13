@@ -1,0 +1,2510 @@
+{
+	"info": {
+		"_postman_id": "2f9ada12-215d-49c1-97e7-efa8a90df54a",
+		"name": "Foodly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21899452",
+		"_collection_link": "https://gold-capsule-201020.postman.co/workspace/.dev-backends~1101c827-eb81-473a-b37f-645488404d61/collection/21899452-2f9ada12-215d-49c1-97e7-efa8a90df54a?action=share&source=collection_link&creator=21899452"
+	},
+	"item": [
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "restaurant",
+					"item": [
+						{
+							"name": "rest toggle",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1M2I2YWZjNTQxZDJhYTJjMWU4OWQyNiIsInVzZXJUeXBlIjoiVmVuZG9yIiwiZW1haWwiOiJkcmVAa2luZy5jb20iLCJpYXQiOjE3MDE4ODQ5MDIsImV4cCI6MTcwMzY5OTMwMn0.vfP8UxSz9Iw0CnsudCL-4VyL_45306zcvPqOuT1sabw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6003/api/restaurant/65704ed9e38e13de7effaa7e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"restaurant",
+										"65704ed9e38e13de7effaa7e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add Restaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n          \"title\": \"Lapisara Eatery\",\n          \"time\": \"15 min\",\n          \"owner\": \"fdfsdfsdfs\",\n          \"code\": \"41007428\",\n          \"logoUrl\":\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n          \"imageUrl\":\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n          \"rating\": 5,\n          \"ratingCount\": 6765,\n          \"coords\" : {\n            \"id\": 2023,\n            \"latitude\": 37.78792117665919,\n            \"longitude\": -122.41325651079953,\n            \"address\": \"698 Post St, San Francisco, CA 94109, United States\",\n            \"title\": \"Lapisara Eatery\"\n          }\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6000/api/restaurant",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"api",
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Nearby Restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/restaurant/41007428",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"restaurant",
+								"41007428"
+							]
+						},
+						"description": "\nThis API endpoint is used to retrieve information about a specific restaurant. The endpoint makes an HTTP GET request to `localhost:6002/api/restaurant/41007428`.\n\nThe response to this request is a JSON object with the following properties:\n- `_id`: The unique identifier of the restaurant.\n- `title`: The name or title of the restaurant.\n- `time`: The operating hours or timing of the restaurant.\n- `imageUrl`: The URL of an image associated with the restaurant.\n- `foods`: An array of food items available at the restaurant.\n- `pickup`: A boolean value indicating if pickup service is available at the restaurant.\n- `delivery`: A boolean value indicating if delivery service is available at the restaurant.\n- `owner`: The owner or proprietor of the restaurant.\n- `isAvailable`: A boolean value indicating if the restaurant is currently available.\n- `code`: A code associated with the restaurant.\n- `logoUrl`: The URL of the restaurant's logo image.\n- `rating`: The rating of the restaurant.\n- `ratingCount`: The number of ratings received by the restaurant.\n- `coords`: An object containing geographical coordinates and address information of the restaurant. The properties of the `coords` object are:\n  - `id`: The unique identifier of the coordinates.\n  - `latitude`: The latitude value of the restaurant's location.\n  - `longitude`: The longitude value of the restaurant's location.\n  - `latitudeDelta`: The latitude delta value of the restaurant's location.\n  - `longitudeDelta`: The longitude delta value of the restaurant's location.\n  - `address`: The address of the restaurant.\n  - `title`: The title or name of the restaurant's location.\n\nExample response:\n```\n[\n  {\n    \"_id\": \"\",\n    \"title\": \"\",\n    \"time\": \"\",\n    \"imageUrl\": \"\",\n    \"foods\": [\"\"],\n    \"pickup\": true,\n    \"delivery\": true,\n    \"owner\": \"\",\n    \"isAvailable\": true,\n    \"code\": \"\",\n    \"logoUrl\": \"\",\n    \"rating\": 0,\n    \"ratingCount\": \"\",\n    \"coords\": {\n      \"id\": \"\",\n      \"latitude\": 0,\n      \"longitude\": 0,\n      \"latitudeDelta\": 0,\n      \"longitudeDelta\": 0,\n      \"address\": \"\",\n      \"title\": \"\"\n    }\n  }\n]\n```\n"
+					},
+					"response": [
+						{
+							"name": "Get Nearby Restaurant",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6002/api/restaurant/41007428",
+									"host": [
+										"localhost"
+									],
+									"port": "6002",
+									"path": [
+										"api",
+										"restaurant",
+										"41007428"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d55-k6tc+QFEBNrOvZVOu8rMGYGIeQM\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Nov 2023 14:22:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"65484d0d8d86aafa0e2bafcf\",\n        \"title\": \"Delicious Pizza Place\",\n        \"time\": \"11:00 AM - 9:00 PM\",\n        \"imageUrl\": \"https://www.allrecipes.com/thmb/0xH8n2D4cC97t7mcC7eT2SDZ0aE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c5398.jpg\",\n        \"foods\": [\n            \"Pizza, Pasta, Salad\"\n        ],\n        \"pickup\": true,\n        \"delivery\": true,\n        \"owner\": \"John Doe\",\n        \"isAvailable\": true,\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://www.allrecipes.com/thmb/0xH8n2D4cC97t7mcC7eT2SDZ0aE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c5398.jpg\",\n        \"rating\": 4.5,\n        \"ratingCount\": \"50\",\n        \"coords\": {\n            \"id\": \"1\",\n            \"latitude\": 40.7128,\n            \"longitude\": -74.006,\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221,\n            \"address\": \"123 Main Street, Cityville, USA\",\n            \"title\": \"Delicious Pizza Place\"\n        }\n    },\n    {\n        \"_id\": \"6530ea6bc9e72013e5b6592d\",\n        \"title\": \"Burger King\",\n        \"time\": \"30 min\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"owner\": \"sjgdsjgfjshhjs\",\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"rating\": 5,\n        \"ratingCount\": \"3278\",\n        \"coords\": {\n            \"id\": \"2020\",\n            \"latitude\": 37.785925590588505,\n            \"longitude\": -122.41007428687641,\n            \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n            \"title\": \"Burger King\",\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221\n        }\n    },\n    {\n        \"_id\": \"6530eb66c9e72013e5b65931\",\n        \"title\": \"La Foods\",\n        \"time\": \"25 min\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"owner\": \"fgdgdfgd\",\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"rating\": 5,\n        \"ratingCount\": \"5666\",\n        \"coords\": {\n            \"id\": \"2022\",\n            \"latitude\": 37.787503258917035,\n            \"longitude\": -122.39854938269353,\n            \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n            \"title\": \"La Foods\",\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221\n        }\n    },\n    {\n        \"_id\": \"6530ebbcc9e72013e5b65933\",\n        \"title\": \"Lapisara Eatery\",\n        \"time\": \"15 min\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"owner\": \"fdfsdfsdfs\",\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"rating\": 5,\n        \"ratingCount\": \"6765\",\n        \"coords\": {\n            \"id\": \"2023\",\n            \"latitude\": 37.78792117665919,\n            \"longitude\": -122.41325651079953,\n            \"address\": \"698 Post St, San Francisco, CA 94109, United States\",\n            \"title\": \"Lapisara Eatery\",\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221\n        }\n    },\n    {\n        \"_id\": \"65484d058d86aafa0e2bafc9\",\n        \"title\": \"Delicious Pizza Place\",\n        \"time\": \"11:00 AM - 9:00 PM\",\n        \"imageUrl\": \"https://www.allrecipes.com/thmb/0xH8n2D4cC97t7mcC7eT2SDZ0aE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c5398.jpg\",\n        \"foods\": [\n            \"Pizza, Pasta, Salad\"\n        ],\n        \"pickup\": true,\n        \"delivery\": true,\n        \"owner\": \"John Doe\",\n        \"isAvailable\": true,\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://www.allrecipes.com/thmb/0xH8n2D4cC97t7mcC7eT2SDZ0aE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c5398.jpg\",\n        \"rating\": 4.5,\n        \"ratingCount\": \"50\",\n        \"coords\": {\n            \"id\": \"1\",\n            \"latitude\": 40.7128,\n            \"longitude\": -74.006,\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221,\n            \"address\": \"123 Main Street, Cityville, USA\",\n            \"title\": \"Delicious Pizza Place\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get All Nearby Restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/restaurant/all/41007428",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"all",
+								"41007428"
+							]
+						},
+						"description": "This endpoint makes an HTTP GET request to retrieve information about a specific restaurant using its ID. The request should be made to {{Base Url}}/api/restaurant/all/41007428.\n\nNo request body is required for this endpoint.\n\n### Response\n\nThe endpoint returns a status code of 200 and an array of objects containing details about the restaurant. Each object includes properties such as ID, title, time, image URL, owner, code, logo URL, rating, rating count, and coordinates.\n\nExample response:\n\n``` json\n[\n    {\n        \"_id\": \"\",\n        \"title\": \"\",\n        \"time\": \"\",\n        \"imageUrl\": \"\",\n        \"owner\": \"\",\n        \"code\": \"\",\n        \"logoUrl\": \"\",\n        \"rating\": 0,\n        \"ratingCount\": \"\",\n        \"coords\": {\n            \"id\": \"\",\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"address\": \"\",\n            \"title\": \"\",\n            \"latitudeDelta\": 0,\n            \"longitudeDelta\": 0\n        }\n    }\n]\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Get All Nearby Restaurant",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Base Url}}/api/restaurant/all/41007428",
+									"host": [
+										"{{Base Url}}"
+									],
+									"path": [
+										"api",
+										"restaurant",
+										"all",
+										"41007428"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f90-U9ADe1pUHL9u5juAJoc/gL6b6to\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 02:37:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6530ea6bc9e72013e5b6592d\",\n        \"title\": \"Burger King\",\n        \"time\": \"11:00 AM - 9:00 PM\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"owner\": \"sjgdsjgfjshhjs\",\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"rating\": 5,\n        \"ratingCount\": \"3278\",\n        \"coords\": {\n            \"id\": \"2020\",\n            \"latitude\": 37.785925590588505,\n            \"longitude\": -122.41007428687641,\n            \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n            \"title\": \"Burger King\",\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221\n        }\n    },\n    {\n        \"_id\": \"6530eb23c9e72013e5b6592f\",\n        \"title\": \"Italian Restaurant\",\n        \"time\": \"11:00 AM - 9:00 PM\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"owner\": \"sjgdsjgfjshhjs\",\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"rating\": 5,\n        \"ratingCount\": \"3278\",\n        \"coords\": {\n            \"id\": \"2021\",\n            \"latitude\": 37.78557922976825,\n            \"longitude\": -122.40722000299483,\n            \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n            \"title\": \"Italian Restaurant\",\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221\n        }\n    },\n    {\n        \"_id\": \"6530eb66c9e72013e5b65931\",\n        \"title\": \"La Foods\",\n        \"time\": \"11:00 AM - 9:00 PM\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"owner\": \"fgdgdfgd\",\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"rating\": 5,\n        \"ratingCount\": \"5666\",\n        \"coords\": {\n            \"id\": \"2022\",\n            \"latitude\": 37.787503258917035,\n            \"longitude\": -122.39854938269353,\n            \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n            \"title\": \"La Foods\",\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221\n        }\n    },\n    {\n        \"_id\": \"6530ebbcc9e72013e5b65933\",\n        \"title\": \"Lapisara Eatery\",\n        \"time\": \"11:00 AM - 9:00 PM\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"owner\": \"fdfsdfsdfs\",\n        \"code\": \"41007428\",\n        \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"rating\": 5,\n        \"ratingCount\": \"6765\",\n        \"coords\": {\n            \"id\": \"2023\",\n            \"latitude\": 37.78792117665919,\n            \"longitude\": -122.41325651079953,\n            \"address\": \"698 Post St, San Francisco, CA 94109, United States\",\n            \"title\": \"Lapisara Eatery\",\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221\n        }\n    },\n    {\n        \"_id\": \"6537b9d9a9567f17ca3c10e5\",\n        \"title\": \"Dbest Eatery\",\n        \"time\": \"11:00 AM - 9:00 PM\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"foods\": [],\n        \"pickup\": true,\n        \"delivery\": true,\n        \"owner\": \"6537a4448cd1bd140ebddcee\",\n        \"isAvailable\": false,\n        \"code\": \"Union Square\",\n        \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n        \"rating\": 5,\n        \"ratingCount\": \"6765\",\n        \"coords\": {\n            \"id\": \"2023\",\n            \"latitude\": 37.78792117665919,\n            \"longitude\": -122.41325651079953,\n            \"address\": \"698 Post St, San Francisco, CA 94109, United States\",\n            \"title\": \"Dbest Eatery\",\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221\n        },\n        \"createdAt\": \"2023-10-24T12:34:33.323Z\",\n        \"updatedAt\": \"2023-10-24T14:53:48.882Z\"\n    },\n    {\n        \"_id\": \"65484b6f3813af4687df70ed\",\n        \"title\": \"Delicious Pizza Place\",\n        \"time\": \"11:00 AM - 9:00 PM\",\n        \"imageUrl\": \"https://www.allrecipes.com/thmb/0xH8n2D4cC97t7mcC7eT2SDZ0aE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c5398.jpg\",\n        \"foods\": [\n            \"Pizza, Pasta, Salad\"\n        ],\n        \"pickup\": true,\n        \"delivery\": true,\n        \"owner\": \"John Doe\",\n        \"isAvailable\": true,\n        \"code\": \"DP123\",\n        \"logoUrl\": \"https://www.allrecipes.com/thmb/0xH8n2D4cC97t7mcC7eT2SDZ0aE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c5398.jpg\",\n        \"rating\": 4.5,\n        \"ratingCount\": \"50\",\n        \"coords\": {\n            \"id\": \"1\",\n            \"latitude\": 40.7128,\n            \"longitude\": -74.006,\n            \"latitudeDelta\": 0.0122,\n            \"longitudeDelta\": 0.0221,\n            \"address\": \"123 Main Street, Cityville, USA\",\n            \"title\": \"Delicious Pizza Place\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/restaurant/byId/65704ed9e38e13de7effaa7e",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"byId",
+								"65704ed9e38e13de7effaa7e"
+							]
+						},
+						"description": "This API endpoint makes an HTTP GET request to retrieve restaurant details by its ID. The request should include the restaurant ID in the URL path. The response will contain information such as the restaurant's location coordinates, available foods, pickup and delivery options, availability status, title, operating hours, image URLs, owner details, rating, and other related attributes.\n\nThe last execution of this request returned a 200 status code along with a JSON response containing the restaurant details, including its coordinates, availability, title, operating hours, image URLs, owner details, rating, and other related attributes.\n\nExample response:\n\n``` json\n{\n    \"coords\": {\n        \"id\": \"2022\",\n        \"latitude\": 37.787503258917035,\n        \"longitude\": -122.39854938269353,\n        \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n        \"title\": \"La Foods\",\n        \"latitudeDelta\": 0.0122,\n        \"longitudeDelta\": 0.0221\n    },\n    \"foods\": [],\n    \"pickup\": true,\n    \"delivery\": true,\n    \"isAvailable\": true,\n    \"_id\": \"6530eb66c9e72013e5b65931\",\n    \"title\": \"La Foods\",\n    \"time\": \"11:00 AM - 9:00 PM\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n    \"owner\": \"fgdgdfgd\",\n    \"code\": \"41007428\",\n    \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/dd7adef9-1527-4b61-81f0-320afb5a884f-kfc.png\",\n    \"rating\": 5,\n    \"ratingCount\": \"5666\",\n    \"__v\": 0\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Get Restaurant",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Base Url}}/api/restaurant/byId/6530eb66c9e72013e5b65931",
+									"host": [
+										"{{Base Url}}"
+									],
+									"path": [
+										"api",
+										"restaurant",
+										"byId",
+										"6530eb66c9e72013e5b65931"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28b-59WN8jhjiTds6biNL3LakS45xfQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Dec 2023 22:36:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"coords\": {\n        \"id\": \"2022\",\n        \"latitude\": 37.787503258917035,\n        \"longitude\": -122.39854938269353,\n        \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n        \"title\": \"La Foods\",\n        \"latitudeDelta\": 0.0122,\n        \"longitudeDelta\": 0.0221\n    },\n    \"foods\": [],\n    \"pickup\": true,\n    \"delivery\": true,\n    \"isAvailable\": true,\n    \"_id\": \"6530eb66c9e72013e5b65931\",\n    \"title\": \"La Foods\",\n    \"time\": \"11:00 AM - 9:00 PM\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n    \"owner\": \"fgdgdfgd\",\n    \"code\": \"41007428\",\n    \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/dd7adef9-1527-4b61-81f0-320afb5a884f-kfc.png\",\n    \"rating\": 5,\n    \"ratingCount\": \"5666\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Restaurant By Owner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1M2I2YWZjNTQxZDJhYTJjMWU4OWQyNiIsInVzZXJUeXBlIjoiVmVuZG9yIiwiZW1haWwiOiJkcmVAa2luZy5jb20iLCJpYXQiOjE3MDE4NjE5MTcsImV4cCI6MTcwMzY3NjMxN30.eR6JeRIA4YqV4NA9TS8d33OPIH-Cu_vfAJBKV4c_tME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/restaurant/profile",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"profile"
+							]
+						},
+						"description": "This API endpoint makes an HTTP GET request to retrieve restaurant details by its ID. The request should include the restaurant ID in the URL path. The response will contain information such as the restaurant's location coordinates, available foods, pickup and delivery options, availability status, title, operating hours, image URLs, owner details, rating, and other related attributes.\n\nThe last execution of this request returned a 200 status code along with a JSON response containing the restaurant details, including its coordinates, availability, title, operating hours, image URLs, owner details, rating, and other related attributes.\n\nExample response:\n\n``` json\n{\n    \"coords\": {\n        \"id\": \"2022\",\n        \"latitude\": 37.787503258917035,\n        \"longitude\": -122.39854938269353,\n        \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n        \"title\": \"La Foods\",\n        \"latitudeDelta\": 0.0122,\n        \"longitudeDelta\": 0.0221\n    },\n    \"foods\": [],\n    \"pickup\": true,\n    \"delivery\": true,\n    \"isAvailable\": true,\n    \"_id\": \"6530eb66c9e72013e5b65931\",\n    \"title\": \"La Foods\",\n    \"time\": \"11:00 AM - 9:00 PM\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n    \"owner\": \"fgdgdfgd\",\n    \"code\": \"41007428\",\n    \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/dd7adef9-1527-4b61-81f0-320afb5a884f-kfc.png\",\n    \"rating\": 5,\n    \"ratingCount\": \"5666\",\n    \"__v\": 0\n}\n\n ```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"More\",\n    \"value\": \"more\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/08323562-a3c6-461d-95a3-b3817c99871b-more.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n     \"title\": \"Curry\",\n     \"value\": \"curry\",\n     \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/ee2d952c-1d7d-48f7-81b3-cb967343eb6c-curry.png\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category/65310f3381e4d98d60b093c5",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category",
+								"65310f3381e4d98d60b093c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n     \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/93c4b3df-9e55-4308-a834-9fe4ad67c0b3-bar.png\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category/image/65310efb81e4d98d60b093c3",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category",
+								"image",
+								"65310efb81e4d98d60b093c3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base Url}}/api/category",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Random Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6003/api/category/random",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"category",
+								"random"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Random Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6003/api/category/random",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"category",
+										"random"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3ea-jJjecsnn617YMN7Kw79ssxq+GDY\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Dec 2023 06:05:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6531209dbbe4998e90af3fef\",\n        \"title\": \"Pasta\",\n        \"value\": \"pasta\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/6645cf41-bc89-4dd0-9f80-bba9487633b2-Spaghetti.png\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65312084bbe4998e90af3fed\",\n        \"title\": \"Burgers\",\n        \"value\": \"burgers\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/3c94bc09-b8b9-4961-accb-f68b7e8121cc-Hamburger.png\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6537ece708ff5b7de97d0695\",\n        \"title\": \"Fried Rice\",\n        \"value\": \"fried_rice\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/4a4cd06e-94de-4478-8588-66eee01354d4-rice.png\",\n        \"createdAt\": \"2023-10-24T16:12:23.571Z\",\n        \"updatedAt\": \"2023-10-24T16:12:23.571Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6531206cbbe4998e90af3feb\",\n        \"title\": \"Pizza\",\n        \"value\": \"pizza\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/466693e6-f999-42e0-8794-09325ece1b45-Pizza.png\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"653120e1bbe4998e90af3ff3\",\n        \"title\": \"More\",\n        \"value\": \"more\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/08323562-a3c6-461d-95a3-b3817c99871b-more.png\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category/",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6003/api/foods/categories/65310efb81e4d98d60b093c3/41007428",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"foods",
+								"categories",
+								"65310efb81e4d98d60b093c3",
+								"41007428"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Foods",
+			"item": [
+				{
+					"name": "Add Food",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Tropical Fruit Smoothie\",\n    \"foodTags\": [\"Fruit\", \"Smoothie\", \"Refreshing\", \"Sweet\", \"Cold\"],\n    \"foodType\": [\"Drink\", \"Breakfast\", \"Snack\", \"Dessert\", \"Vegan\"],\n    \"code\": \"41007428\",\n    \"category\": \"41007428\",\n    \"isAvailable\": true,\n    \"restaurant\": \"60c82b2b4f5092a730a0fe0e\",\n    \"rating\": 4.7,\n    \"ratingCount\": \"280\",\n    \"description\": \"A delightful blend of tropical fruits, creating the perfect sweet and refreshing drink.\",\n    \"price\": 6.99,\n    \"additives\": [\n        { \"id\": 1, \"title\": \"Mango\", \"price\": \"2.00\" },\n        { \"id\": 2, \"title\": \"Pineapple\", \"price\": \"1.50\" },\n        { \"id\": 3, \"title\": \"Banana\", \"price\": \"1.00\" },\n        { \"id\": 4, \"title\": \"Coconut Milk\", \"price\": \"1.50\" },\n        { \"id\": 5, \"title\": \"Ice\", \"price\": \"0.50\" }\n    ],\n    \"imageUrl\": [\"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/foods",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/tag/",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"tag",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add FoodType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"foodType\": \"Pasta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/foods/type/653168e9f94c6496dc84f3bf",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"type",
+								"653168e9f94c6496dc84f3bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Food",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/653168e9f94c6496dc84f3bf",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"653168e9f94c6496dc84f3bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Foods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/search/Pizza",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"search",
+								"Pizza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Food Recommendations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/foods/recommendation/41007428",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"foods",
+								"recommendation",
+								"41007428"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Food Recommendations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6002/api/foods/recommendation/41007428",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6002",
+									"path": [
+										"api",
+										"foods",
+										"recommendation",
+										"41007428"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12af-f+yuWMy72kuQ/ppDTTCY9S3wuCw\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Nov 2023 14:22:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"65316771f94c6496dc84f3bd\",\n        \"title\": \"Margherita Pizza\",\n        \"foodTags\": [\n            \"Italian\",\n            \"Cheesy\",\n            \"Vegetarian\"\n        ],\n        \"foodType\": [\n            \"Main Course\"\n        ],\n        \"code\": \"41007428\",\n        \"isAvailable\": true,\n        \"restaurant\": \"6530ebbcc9e72013e5b65933\",\n        \"rating\": 4.5,\n        \"ratingCount\": \"150\",\n        \"description\": \"A classic Margherita pizza with fresh tomatoes, mozzarella cheese, basil, and olive oil.\",\n        \"price\": 12.99,\n        \"additives\": [\n            {\n                \"id\": 1,\n                \"title\": \"Cheese\",\n                \"price\": \"2.00\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Pepperoni\",\n                \"price\": \"2.50\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Ketch up\",\n                \"price\": \"0.50\"\n            }\n        ],\n        \"imageUrl\": [\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n        ],\n        \"__v\": 0,\n        \"category\": \"6531209dbbe4998e90af3fef\",\n        \"time\": \"30 min\"\n    },\n    {\n        \"_id\": \"65316a01f94c6496dc84f3c7\",\n        \"title\": \"Tropical Fruit Smoothie\",\n        \"foodTags\": [\n            \"Fruit\",\n            \"Smoothie\",\n            \"Refreshing\",\n            \"Sweet\",\n            \"Cold\"\n        ],\n        \"foodType\": [\n            \"Drink\",\n            \"Breakfast\",\n            \"Snack\",\n            \"Dessert\",\n            \"Vegan\"\n        ],\n        \"code\": \"41007428\",\n        \"isAvailable\": true,\n        \"restaurant\": \"6530ea6bc9e72013e5b6592d\",\n        \"rating\": 4.7,\n        \"ratingCount\": \"280\",\n        \"description\": \"A delightful blend of tropical fruits, creating the perfect sweet and refreshing drink.\",\n        \"price\": 6.99,\n        \"additives\": [\n            {\n                \"id\": 1,\n                \"title\": \"Mango\",\n                \"price\": \"2.00\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Pineapple\",\n                \"price\": \"1.50\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Banana\",\n                \"price\": \"1.00\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Coconut Milk\",\n                \"price\": \"1.50\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Ice\",\n                \"price\": \"0.50\"\n            }\n        ],\n        \"imageUrl\": [\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n        ],\n        \"__v\": 0,\n        \"category\": \"6531209dbbe4998e90af3fef\",\n        \"time\": \"25 min\"\n    },\n    {\n        \"_id\": \"653169a9f94c6496dc84f3c3\",\n        \"title\": \"Vegan Salad Bowl\",\n        \"foodTags\": [\n            \"Vegan\",\n            \"Healthy\",\n            \"Salad\",\n            \"Fresh\",\n            \"Organic\"\n        ],\n        \"foodType\": [\n            \"Starter\",\n            \"Lunch\",\n            \"Dinner\",\n            \"Health\",\n            \"Vegan\"\n        ],\n        \"code\": \"41007428\",\n        \"isAvailable\": true,\n        \"restaurant\": \"6530ea6bc9e72013e5b6592d\",\n        \"rating\": 4.6,\n        \"ratingCount\": \"230\",\n        \"description\": \"A refreshing mix of organic vegetables, nuts, seeds, and a tangy vinaigrette.\",\n        \"price\": 11.99,\n        \"additives\": [\n            {\n                \"id\": 1,\n                \"title\": \"Mixed Greens\",\n                \"price\": \"1.50\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Walnuts\",\n                \"price\": \"2.00\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Quinoa\",\n                \"price\": \"1.50\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Cherry Tomatoes\",\n                \"price\": \"1.00\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Vinaigrette\",\n                \"price\": \"0.50\"\n            }\n        ],\n        \"imageUrl\": [\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n        ],\n        \"__v\": 0,\n        \"category\": \"6531209dbbe4998e90af3fef\",\n        \"time\": \"55 min\"\n    },\n    {\n        \"_id\": \"653168e9f94c6496dc84f3bf\",\n        \"title\": \"Spaghetti Carbonara\",\n        \"foodTags\": [\n            \"Italian\",\n            \"Creamy\",\n            \"Pasta\",\n            \"Bacon\",\n            \"Egg\"\n        ],\n        \"foodType\": [\n            \"Main Course\",\n            \"Lunch\",\n            null\n        ],\n        \"code\": \"41007428\",\n        \"isAvailable\": true,\n        \"restaurant\": \"6530ea6bc9e72013e5b6592d\",\n        \"rating\": 4.7,\n        \"ratingCount\": \"310\",\n        \"description\": \"A traditional Italian pasta dish with creamy egg sauce, pancetta, and cheese.\",\n        \"price\": 14.99,\n        \"additives\": [\n            {\n                \"id\": 1,\n                \"title\": \"Egg\",\n                \"price\": \"1.00\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Pancetta\",\n                \"price\": \"3.00\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Parmesan Cheese\",\n                \"price\": \"2.00\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Black Pepper\",\n                \"price\": \"0.50\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Pasta\",\n                \"price\": \"3.00\"\n            }\n        ],\n        \"imageUrl\": [\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n        ],\n        \"__v\": 2,\n        \"category\": \"6531209dbbe4998e90af3fef\",\n        \"time\": \"20 min\"\n    },\n    {\n        \"_id\": \"653169d8f94c6496dc84f3c5\",\n        \"title\": \"Mixed Grill Platter\",\n        \"foodTags\": [\n            \"Barbecue\",\n            \"Meat\",\n            \"Grilled\",\n            \"Spicy\",\n            \"Savory\"\n        ],\n        \"foodType\": [\n            \"Main Course\",\n            \"Dinner\",\n            \"Grill\",\n            \"Non-Vegetarian\",\n            \"Barbecue\"\n        ],\n        \"code\": \"41007428\",\n        \"isAvailable\": true,\n        \"restaurant\": \"6530ea6bc9e72013e5b6592d\",\n        \"rating\": 4.8,\n        \"ratingCount\": \"320\",\n        \"description\": \"A succulent assortment of grilled meats, served with sides and sauces.\",\n        \"price\": 18.99,\n        \"additives\": [\n            {\n                \"id\": 1,\n                \"title\": \"Chicken\",\n                \"price\": \"3.00\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Beef\",\n                \"price\": \"4.00\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Lamb\",\n                \"price\": \"4.00\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Pork\",\n                \"price\": \"3.50\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Barbecue Sauce\",\n                \"price\": \"1.00\"\n            }\n        ],\n        \"imageUrl\": [\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n        ],\n        \"__v\": 0,\n        \"category\": \"6531209dbbe4998e90af3fef\",\n        \"time\": \"45 min\"\n    },\n    {\n        \"_id\": \"65316968f94c6496dc84f3c1\",\n        \"title\": \"Tiramisu\",\n        \"foodTags\": [\n            \"Italian\",\n            \"Dessert\",\n            \"Coffee\",\n            \"Mascarpone\",\n            \"Cocoa\"\n        ],\n        \"foodType\": [\n            \"Dessert\"\n        ],\n        \"code\": \"41007428\",\n        \"isAvailable\": true,\n        \"restaurant\": \"6530ea6bc9e72013e5b6592d\",\n        \"rating\": 4.9,\n        \"ratingCount\": \"420\",\n        \"description\": \"A classic Italian dessert made of layers of coffee-soaked ladyfingers and creamy mascarpone, topped with cocoa.\",\n        \"price\": 7.99,\n        \"additives\": [\n            {\n                \"id\": 1,\n                \"title\": \"Ladyfingers\",\n                \"price\": \"1.00\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Coffee\",\n                \"price\": \"1.50\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Mascarpone Cheese\",\n                \"price\": \"2.50\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Cocoa\",\n                \"price\": \"0.50\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Sugar\",\n                \"price\": \"0.50\"\n            }\n        ],\n        \"imageUrl\": [\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n        ],\n        \"__v\": 0,\n        \"category\": \"6531209dbbe4998e90af3fef\",\n        \"time\": \"35 min\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Recommendations By Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/foods/6531209dbbe4998e90af3fef/41007428",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"foods",
+								"6531209dbbe4998e90af3fef",
+								"41007428"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Food",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Food Availability Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rest Foods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/foods/restaurant-foods/65704ed9e38e13de7effaa7e",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"foods",
+								"restaurant-foods",
+								"65704ed9e38e13de7effaa7e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Andre\",\n    \"email\": \"andre@kings.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6002/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driver Registration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiQ2xpZW50IiwiaWF0IjoxNzAwNTA2MzAwLCJleHAiOjE3MDIzMjA3MDB9.d7r7N4tQ8Qne6I0y2oO1X1VSunRmZsgZxWdch6yxasE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vehicleType\": \"Car\",\n    \"phone\": \"1234567890\",\n    \"vehicleNumber\": \"ABC123\",\n    \"latitude\": 37.7749,\n    \"longitude\": -122.4194\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6002/api/driver",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"akotoxmpimbo@outlook.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6003/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"akotoxmpimbo@gmail.com\",\n    \"password\": \"password123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:6003/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"222-Eo81zr3VpCkQnphl4uKeF9dyAB0\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Dec 2023 21:51:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6578cde3d24209970e67ae7f\",\n    \"username\": \"Hungry Dude\",\n    \"email\": \"akotoxmpimbo@gmail.com\",\n    \"verification\": false,\n    \"phone\": \"01234567890\",\n    \"phoneVerification\": false,\n    \"userType\": \"Client\",\n    \"profile\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/bdec9d7d-0544-4fc4-823d-3b898f6dbbbf-vinci_03.jpeg\",\n    \"userToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzhjZGUzZDI0MjA5OTcwZTY3YWU3ZiIsInVzZXJUeXBlIjoiQ2xpZW50IiwiZW1haWwiOiJha290b3htcGltYm9AZ21haWwuY29tIiwiaWF0IjoxNzAyNDE3ODY2LCJleHAiOjE3MDQyMzIyNjZ9.DJhQay22Phc2X3mzipFUk9ZkFv2398POAng0I3ug_AQ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/users",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driver",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiRHJpdmVyIiwiZW1haWwiOiJhbmRyZUBraW5ncy5jb20iLCJpYXQiOjE3MDE2OTE5NTYsImV4cCI6MTcwMzUwNjM1Nn0.TfYW4kN2Wqu3kXjsrQqhxRECkIP8_NFjSUq82sLx2XE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/users",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driver Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiRHJpdmVyIiwiaWF0IjoxNzAwNTgwODYzLCJleHAiOjE3MDIzOTUyNjN9.oTka-W4gawD6w1aOCdfMPW5Pt4vDV6RzCSOGBagcyHM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6003/api/orders/picked/Out_for_Delivery/655ca78e2d7b7beb36e9ce76",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"orders",
+								"picked",
+								"Out_for_Delivery",
+								"655ca78e2d7b7beb36e9ce76"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driver Copy 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiRHJpdmVyIiwiaWF0IjoxNzAwNTgwODYzLCJleHAiOjE3MDIzOTUyNjN9.oTka-W4gawD6w1aOCdfMPW5Pt4vDV6RzCSOGBagcyHM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6002/api/orders/delivered/655ce446a8b98b9eb0ef4f0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"orders",
+								"delivered",
+								"655ce446a8b98b9eb0ef4f0c"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiQ2xpZW50IiwiaWF0IjoxNzAwNTA0ODk3LCJleHAiOjE3MDIzMTkyOTd9.KG-kUkVuk_tF5WMbFMMa1bAChJ2WdPIWqiaDyB6o-fE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add Cart and Increment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiQ2xpZW50IiwiaWF0IjoxNzAwNTA0ODk3LCJleHAiOjE3MDIzMTkyOTd9.KG-kUkVuk_tF5WMbFMMa1bAChJ2WdPIWqiaDyB6o-fE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"instructions\": \"653168e9f94c6496dc84f3bf\",\n    \"productId\": \"65316771f94c6496dc84f3bd\",\n    \"additives\": [\"Extra Cheese\", \"Mushrooms\"],\n    \"quantity\": 2,\n    \"totalPrice\": 25.98\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6003/api/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"cart"
+							]
+						},
+						"description": "This endpoint allows you to add items to the cart by making an HTTP POST request to localhost:6003/api/cart. The request should include a JSON payload in the raw request body type with the following parameters:\n\n- \"instructions\" (string): Instructions for the item\n- \"productId\" (string): ID of the product\n- \"additives\" (array of strings): List of additives for the product\n- \"quantity\" (number): Quantity of the product\n- \"totalPrice\" (number): Total price of the product\n    \n\n### Example Request\n\n``` json\n{\n    \"instructions\": \"Some instructions here\",\n    \"productId\": \"12345\",\n    \"additives\": [\"sugar\", \"milk\"],\n    \"quantity\": 2,\n    \"totalPrice\": 10.99\n}\n\n ```\n\n### Response\n\nUpon successful execution, the endpoint returns a status code of 201 and a JSON response with the following fields:\n\n- \"status\" (boolean): Indicates the status of the operation\n- \"count\" (number): Number of items in the cart\n    \n\n### Example Response\n\n``` json\n{\n    \"status\": true,\n    \"count\": 3\n}\n\n ```\n\nAdd documentation"
+					},
+					"response": [
+						{
+							"name": "Add Cart and Increment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"instructions\": \"653168e9f94c6496dc84f3bf\",\n    \"productId\": \"65316771f94c6496dc84f3bd\",\n    \"additives\": [\"Extra Cheese\", \"Mushrooms\"],\n    \"quantity\": 2,\n    \"totalPrice\": 25.98\n}\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6003/api/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"cart"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-jNkA8WvGJp4VAoRKuykiOC5Zu7E\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 21:44:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"count\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "Decrement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"653168e9f94c6496dc84f3bf\",\n    \"productId\": \"65316771f94c6496dc84f3bd\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/cart/decrement",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart",
+								"decrement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"653168e9f94c6496dc84f3bf\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/cart/delete/6533bd465f5c35dc75209073",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart",
+								"delete",
+								"6533bd465f5c35dc75209073"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"653168e9f94c6496dc84f3bf\",\n    \"productId\": \"60fc1c8f3e8a9e001fbb5678\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/cart/653168e9f94c6496dc84f3bf",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart",
+								"653168e9f94c6496dc84f3bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6003/api/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cart",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6003/api/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d2b-wi+6atRkbRU25I9JtRiqd4ZOhxA\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Dec 2023 17:33:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"654317f20371e4d32c13eb8c\",\n        \"userId\": \"6534d5a5e8f831be96f4697f\",\n        \"productId\": {\n            \"_id\": \"65316968f94c6496dc84f3c1\",\n            \"title\": \"Tiramisu\",\n            \"restaurant\": {\n                \"coords\": {\n                    \"id\": \"2020\",\n                    \"latitude\": 37.785925590588505,\n                    \"longitude\": -122.41007428687641,\n                    \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n                    \"title\": \"Burger King\",\n                    \"latitudeDelta\": 0.0122,\n                    \"longitudeDelta\": 0.0221\n                },\n                \"_id\": \"6530ea6bc9e72013e5b6592d\",\n                \"time\": \"11:00 AM - 9:00 PM\"\n            },\n            \"rating\": 4.9,\n            \"ratingCount\": \"420\",\n            \"imageUrl\": [\n                \"https://d326fntlu7tb1e.cloudfront.net/uploads/a257ce57-c67b-40fe-92a6-509fdd067bef-Tiramisu-6-en-cover.png\",\n                \"https://d326fntlu7tb1e.cloudfront.net/uploads/a257ce57-c67b-40fe-92a6-509fdd067bef-Tiramisu-6-en-cover.png\"\n            ]\n        },\n        \"additives\": [\n            {\n                \"id\": 1,\n                \"title\": \"Ladyfingers\",\n                \"price\": \"1.00\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Mascarpone Cheese\",\n                \"price\": \"2.50\"\n            }\n        ],\n        \"instructions\": \"\",\n        \"totalPrice\": 11.49,\n        \"quantity\": 1,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"654318020371e4d32c13eb96\",\n        \"userId\": \"6534d5a5e8f831be96f4697f\",\n        \"productId\": {\n            \"_id\": \"653169d8f94c6496dc84f3c5\",\n            \"title\": \"Mixed Grill Platter\",\n            \"restaurant\": {\n                \"coords\": {\n                    \"id\": \"2020\",\n                    \"latitude\": 37.785925590588505,\n                    \"longitude\": -122.41007428687641,\n                    \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n                    \"title\": \"Burger King\",\n                    \"latitudeDelta\": 0.0122,\n                    \"longitudeDelta\": 0.0221\n                },\n                \"_id\": \"6530ea6bc9e72013e5b6592d\",\n                \"time\": \"11:00 AM - 9:00 PM\"\n            },\n            \"rating\": 4.8,\n            \"ratingCount\": \"320\",\n            \"imageUrl\": [\n                \"https://d326fntlu7tb1e.cloudfront.net/uploads/f1f859c1-77a1-403f-8a06-cbf849fc62d4-platter.jpeg\",\n                \"https://d326fntlu7tb1e.cloudfront.net/uploads/f1f859c1-77a1-403f-8a06-cbf849fc62d4-platter.jpeg\"\n            ]\n        },\n        \"additives\": [\n            {\n                \"id\": 1,\n                \"title\": \"Chicken\",\n                \"price\": \"3.00\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Barbecue Sauce\",\n                \"price\": \"1.00\"\n            }\n        ],\n        \"instructions\": \"\",\n        \"totalPrice\": 64.97,\n        \"quantity\": 3,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6567b0b574c5a4c4c8429edb\",\n        \"userId\": \"6534d5a5e8f831be96f4697f\",\n        \"productId\": {\n            \"_id\": \"65316771f94c6496dc84f3bd\",\n            \"title\": \"Margherita Pizza\",\n            \"restaurant\": {\n                \"coords\": {\n                    \"id\": \"47807\",\n                    \"latitude\": 37.785925590588505,\n                    \"longitude\": -122.41007428687641,\n                    \"address\": \"22 Louwtjie Rothman Street,  N1 City, 7460,  Goodwood,  South Africa\",\n                    \"title\": \"Foodly\",\n                    \"latitudeDelta\": 0.0122,\n                    \"longitudeDelta\": 0.0221\n                },\n                \"_id\": \"65704ed9e38e13de7effaa7e\",\n                \"time\": \"8:00 am - 11:00 pm\"\n            },\n            \"rating\": 4.5,\n            \"ratingCount\": \"150\",\n            \"imageUrl\": [\n                \"https://d326fntlu7tb1e.cloudfront.net/uploads/bb61e534-00ca-4736-b23a-0340715ee508-pizza_set_2021_full.jpg\",\n                \"https://d326fntlu7tb1e.cloudfront.net/uploads/bb61e534-00ca-4736-b23a-0340715ee508-pizza_set_2021_full.jpg\"\n            ]\n        },\n        \"additives\": [\n            \"Extra Cheese\",\n            \"Mushrooms\"\n        ],\n        \"instructions\": \"653168e9f94c6496dc84f3bf\",\n        \"totalPrice\": 25.98,\n        \"quantity\": 2,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"657891ee40d1e5578d9a33d4\",\n        \"userId\": \"6534d5a5e8f831be96f4697f\",\n        \"productId\": {\n            \"_id\": \"653168e9f94c6496dc84f3bf\",\n            \"title\": \"Spaghetti Carbonara\",\n            \"restaurant\": {\n                \"coords\": {\n                    \"id\": \"2020\",\n                    \"latitude\": 37.785925590588505,\n                    \"longitude\": -122.41007428687641,\n                    \"address\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n                    \"title\": \"Burger King\",\n                    \"latitudeDelta\": 0.0122,\n                    \"longitudeDelta\": 0.0221\n                },\n                \"_id\": \"6530ea6bc9e72013e5b6592d\",\n                \"time\": \"11:00 AM - 9:00 PM\"\n            },\n            \"rating\": 4.7,\n            \"ratingCount\": \"310\",\n            \"imageUrl\": [\n                \"https://d326fntlu7tb1e.cloudfront.net/uploads/9525c80f-0909-4618-b758-2b26ab37a419-sssssss.jpeg\",\n                \"https://d326fntlu7tb1e.cloudfront.net/uploads/9525c80f-0909-4618-b758-2b26ab37a419-sssssss.jpeg\"\n            ]\n        },\n        \"additives\": [\n            \"Egg\",\n            \"Pancetta\",\n            \"Parmesan Cheese\"\n        ],\n        \"instructions\": \"\",\n        \"totalPrice\": 20.990000000000002,\n        \"quantity\": 1,\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Fetch Cart Count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiQ2xpZW50IiwiaWF0IjoxNzAwNTA0ODk3LCJleHAiOjE3MDIzMTkyOTd9.KG-kUkVuk_tF5WMbFMMa1bAChJ2WdPIWqiaDyB6o-fE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/cart/count/653168e9f94c6496dc84f3bf",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart",
+								"count",
+								"653168e9f94c6496dc84f3bf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTE5YWE1N2UzNzU1ZWU0NWY1MWI3MTAiLCJwaG9uZSI6IjEyMzQ1Njc4OTIiLCJmb29kVHlwZSI6WyJGb29kVHlwZSIsIkZvb2RUeXBlIl0sIm5hbWUiOiJZb3VyVmVuZG9yTmFtZSIsImlhdCI6MTY5NjE4NjkwOCwiZXhwIjoxNjk4MDAxMzA4fQ.N8Et9rygP9-izSIflGPaJs32cUHyS7FF72ejkrbyK7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pickup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiRHJpdmVyIiwiaWF0IjoxNzAwNTgwODYzLCJleHAiOjE3MDIzOTUyNjN9.oTka-W4gawD6w1aOCdfMPW5Pt4vDV6RzCSOGBagcyHM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/orders/delivery/Ready",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"delivery",
+								"Ready"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6003/api/orders?paymentStatus=Completed",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "paymentStatus",
+									"value": "Completed"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6003/api/orders?paymentStatus=Completed",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "paymentStatus",
+											"value": "Completed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b3a-L9hnS/tV/AJKNtLuDNiVzmM5SJA\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 19:06:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"65690e5bf053cef2d3b72172\",\n        \"userId\": \"656733c04be59c45c9ad66ed\",\n        \"orderItems\": [\n            {\n                \"foodId\": {\n                    \"_id\": \"65316968f94c6496dc84f3c1\",\n                    \"title\": \"Tiramisu\",\n                    \"rating\": 4.9,\n                    \"imageUrl\": [\n                        \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n                    ],\n                    \"time\": \"35 min\"\n                },\n                \"quantity\": 1,\n                \"price\": 11.99,\n                \"additives\": [\n                    \"Ladyfingers\",\n                    \"Mascarpone Cheese\",\n                    \"Sugar\"\n                ],\n                \"instructions\": \"\",\n                \"_id\": \"65690e5bf053cef2d3b72173\"\n            }\n        ],\n        \"orderTotal\": 11.99,\n        \"deliveryFee\": 1.29,\n        \"grandTotal\": 13.28,\n        \"deliveryAddress\": \"65677e4ba65ccee0b94b1de3\",\n        \"restaurantAddress\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n        \"paymentMethod\": \"STRIPE\",\n        \"paymentStatus\": \"Completed\",\n        \"orderStatus\": \"Placed\",\n        \"restaurantId\": \"6530ea6bc9e72013e5b6592d\",\n        \"restaurantCoords\": [\n            37.785925590588505,\n            -122.41007428687641\n        ],\n        \"recipientCoords\": [\n            37.7879617,\n            -122.4085328\n        ],\n        \"orderDate\": \"2023-11-30T22:36:11.012Z\",\n        \"createdAt\": \"2023-11-30T22:36:11.014Z\",\n        \"updatedAt\": \"2023-11-30T22:36:56.295Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65690f42f053cef2d3b72187\",\n        \"userId\": \"656733c04be59c45c9ad66ed\",\n        \"orderItems\": [\n            {\n                \"foodId\": {\n                    \"_id\": \"65316a01f94c6496dc84f3c7\",\n                    \"title\": \"Tropical Fruit Smoothie\",\n                    \"rating\": 4.7,\n                    \"imageUrl\": [\n                        \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n                    ],\n                    \"time\": \"25 min\"\n                },\n                \"quantity\": 1,\n                \"price\": 10.49,\n                \"additives\": [\n                    \"Mango\",\n                    \"Banana\",\n                    \"Ice\"\n                ],\n                \"instructions\": \"\",\n                \"_id\": \"65690f42f053cef2d3b72188\"\n            }\n        ],\n        \"orderTotal\": 10.49,\n        \"deliveryFee\": 1.29,\n        \"grandTotal\": 11.78,\n        \"deliveryAddress\": \"65677e4ba65ccee0b94b1de3\",\n        \"restaurantAddress\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n        \"paymentMethod\": \"STRIPE\",\n        \"paymentStatus\": \"Completed\",\n        \"orderStatus\": \"Placed\",\n        \"restaurantId\": \"6530ea6bc9e72013e5b6592d\",\n        \"restaurantCoords\": [\n            37.785925590588505,\n            -122.41007428687641\n        ],\n        \"recipientCoords\": [\n            37.7879617,\n            -122.4085328\n        ],\n        \"orderDate\": \"2023-11-30T22:40:02.651Z\",\n        \"createdAt\": \"2023-11-30T22:40:02.653Z\",\n        \"updatedAt\": \"2023-11-30T22:40:38.956Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"656912c6f053cef2d3b721d3\",\n        \"userId\": \"656733c04be59c45c9ad66ed\",\n        \"orderItems\": [\n            {\n                \"foodId\": {\n                    \"_id\": \"653169a9f94c6496dc84f3c3\",\n                    \"title\": \"Vegan Salad Bowl\",\n                    \"rating\": 4.6,\n                    \"imageUrl\": [\n                        \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"\n                    ],\n                    \"time\": \"55 min\"\n                },\n                \"quantity\": 1,\n                \"price\": 15.49,\n                \"additives\": [\n                    \"Mixed Greens\",\n                    \"Quinoa\",\n                    \"Vinaigrette\"\n                ],\n                \"instructions\": \"wearweadasd\",\n                \"_id\": \"656912c6f053cef2d3b721d4\"\n            }\n        ],\n        \"orderTotal\": 15.49,\n        \"deliveryFee\": 1.29,\n        \"grandTotal\": 16.78,\n        \"deliveryAddress\": \"65677e4ba65ccee0b94b1de3\",\n        \"restaurantAddress\": \"333 O'Farrell St, San Francisco, CA 94102, United States\",\n        \"paymentMethod\": \"STRIPE\",\n        \"paymentStatus\": \"Completed\",\n        \"orderStatus\": \"Placed\",\n        \"restaurantId\": \"6530ea6bc9e72013e5b6592d\",\n        \"restaurantCoords\": [\n            37.785925590588505,\n            -122.41007428687641\n        ],\n        \"recipientCoords\": [\n            37.7879617,\n            -122.4085328\n        ],\n        \"orderDate\": \"2023-11-30T22:55:02.752Z\",\n        \"createdAt\": \"2023-11-30T22:55:02.753Z\",\n        \"updatedAt\": \"2023-11-30T22:55:47.888Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjczM2MwNGJlNTljNDVjOWFkNjZlZCIsInVzZXJUeXBlIjoiQ2xpZW50IiwiZW1haWwiOiJkZXZAa2luZ3MuY29tIiwiaWF0IjoxNzAxNDU2ODcxLCJleHAiOjE3MDMyNzEyNzF9.hh0U2t8gNupxBfvU1E1N49QScLUFJ832-0DblFRHRFw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Addresses",
+			"item": [
+				{
+					"name": "Add Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"addressLine1\": \"150 Geary St\",\n    \"city\": \"San Francisco\",\n    \"district\": \"Union Square\",\n    \"state\": \"CA\",\n    \"postalCode\": \"94108\",\n    \"default\": true,\n    \"country\": \"USA\",\n    \"deliveryInstructions\": \"Main entrance, ask for reception.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6003/api/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Default Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiQ2xpZW50IiwiaWF0IjoxNzAwNTA0ODk3LCJleHAiOjE3MDIzMTkyOTd9.KG-kUkVuk_tF5WMbFMMa1bAChJ2WdPIWqiaDyB6o-fE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6003/api/address/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"address",
+								"default"
+							]
+						},
+						"description": "\n# Get Default Address\n\nThis endpoint retrieves the default address for a user.\n\n## Request\n\n### HTTP Request\n`GET http://localhost:6003/api/address/default`\n\n## Response\n\n- `200 OK` The request was successful.\n\nExample response:\n```json\n{\n    \"_id\": \"656375b39ef6581e75723247\",\n    \"userId\": \"6534d5a5e8f831be96f4697f\",\n    \"addressLine1\": \"132 Geary Street\",\n    \"city\": \"San Francisco\",\n    \"state\": \"California\",\n    \"district\": \"Union Square\",\n    \"postalCode\": \"94108\",\n    \"default\": true,\n    \"country\": \"USA\",\n    \"deliveryInstructions\": \"Main entrance, ask for reception.\",\n    \"__v\": 0\n}\n```\n"
+					},
+					"response": [
+						{
+							"name": "Get Default Address",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6003/api/address/default",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"address",
+										"default"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"125-aozoblmACBs3DPo/S4N8M/Kgdqk\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 18:19:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"656375b39ef6581e75723247\",\n    \"userId\": \"6534d5a5e8f831be96f4697f\",\n    \"addressLine1\": \"132 Geary Street\",\n    \"city\": \"San Francisco\",\n    \"state\": \"California\",\n    \"district\": \"Union Square\",\n    \"postalCode\": \"94108\",\n    \"default\": true,\n    \"country\": \"USA\",\n    \"deliveryInstructions\": \"Main entrance, ask for reception.\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6003/api/address/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"address",
+								"all"
+							]
+						},
+						"description": "# Get All Addresses\n\nThis endpoint retrieves all addresses associated with the user.\n\n## Request\n\n### HTTP Request\n\n`GET http://localhost:6003/api/address/all`\n\n## Response\n\n- Status: 200 OK\n    \n\nExample response body:\n\n``` json\n[\n    {\n        \"_id\": \"\",\n        \"userId\": \"\",\n        \"addressLine1\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"district\": \"\",\n        \"postalCode\": \"\",\n        \"default\": true,\n        \"country\": \"\",\n        \"deliveryInstructions\": \"\",\n        \"__v\": 0\n    }\n]\n\n ```\n\n### Response Body\n\n- `_id` (string): The unique identifier for the address.\n- `userId` (string): The user ID associated with the address.\n- `addressLine1` (string): The first line of the address.\n- `city` (string): The city of the address.\n- `state` (string): The state of the address.\n- `district` (string): The district of the address.\n- `postalCode` (string): The postal code of the address.\n- `default` (boolean): Indicates if it is the default address.\n- `country` (string): The country of the address.\n- `deliveryInstructions` (string): Any specific delivery instructions.\n- `__v` (number): Version control field."
+					},
+					"response": [
+						{
+							"name": "Get All Addresses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6003/api/address/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"address",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"127-85dQmGUnE8rAknubXhWx910apMA\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 18:17:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"656375b39ef6581e75723247\",\n        \"userId\": \"6534d5a5e8f831be96f4697f\",\n        \"addressLine1\": \"132 Geary Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"California\",\n        \"district\": \"Union Square\",\n        \"postalCode\": \"94108\",\n        \"default\": true,\n        \"country\": \"USA\",\n        \"deliveryInstructions\": \"Main entrance, ask for reception.\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Default Address",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"6534d5a5e8f831be96f4697f\",\n    \"addressId\": \"653565106fb3369ad1813806\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6002/api/address/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"address",
+								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiQ2xpZW50IiwiaWF0IjoxNzAwNTA0ODk3LCJleHAiOjE3MDIzMTkyOTd9.KG-kUkVuk_tF5WMbFMMa1bAChJ2WdPIWqiaDyB6o-fE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Driver",
+			"item": [
+				{
+					"name": "Get Driver",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiRHJpdmVyIiwiZW1haWwiOiJhbmRyZUBraW5ncy5jb20iLCJpYXQiOjE3MDE2OTE5NTYsImV4cCI6MTcwMzUwNjM1Nn0.TfYW4kN2Wqu3kXjsrQqhxRECkIP8_NFjSUq82sLx2XE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base Url}}/api/driver",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"driver"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Driver",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Base Url}}/api/driver",
+									"host": [
+										"{{Base Url}}"
+									],
+									"path": [
+										"api",
+										"driver"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"182-hYGNCeepPi5Bsrlm+0uJzVQanR4\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 12:27:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"currentLocation\": {\n        \"latitude\": 37.785834,\n        \"longitude\": -122.406417\n    },\n    \"_id\": \"655ca78e2d7b7beb36e9ce76\",\n    \"driver\": \"6534d5a5e8f831be96f4697f\",\n    \"vehicleType\": \"Car\",\n    \"phone\": \"0123456789\",\n    \"vehicleNumber\": \"ABC123\",\n    \"isAvailable\": true,\n    \"rating\": 3,\n    \"totalDeliveries\": 0,\n    \"profileImage\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/cf503f8d-3318-4306-9e2c-a53efb7d585b-avatar.png\",\n    \"isActive\": true,\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Driver Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRkNWE1ZThmODMxYmU5NmY0Njk3ZiIsInVzZXJUeXBlIjoiRHJpdmVyIiwiZW1haWwiOiJhbmRyZUBraW5ncy5jb20iLCJpYXQiOjE3MDE2OTE5NTYsImV4cCI6MTcwMzUwNjM1Nn0.TfYW4kN2Wqu3kXjsrQqhxRECkIP8_NFjSUq82sLx2XE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6003/api/orders/picked/Delivered/655ca78e2d7b7beb36e9ce76",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"orders",
+								"picked",
+								"Delivered",
+								"655ca78e2d7b7beb36e9ce76"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Messaging",
+			"item": [
+				{
+					"name": "Messaging",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample Notification Title\",\n    \"messageBody\": \"This is a sample notification message.\",\n    \"data\": {\n        \"key1\": \"value1\",\n        \"key2\": \"value2\"\n    },\n    \"deviceToken\": \"c0SMO6V8RnqOnFEgRWoejs:APA91bEinjjIcV3DHBZGIrgTVci2bQNi_JSv9rZBYnK0a0vhj1JZL3Yeil6uAtHYHGH8OJPaS3Zt7N8Yt0Ec2VMZzXUCSAIUmDjbLypvu_oDLQvHganCaOWhFyoq7McoRpAuqYlzyKAD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base Url}}/api/messaging",
+							"host": [
+								"{{Base Url}}"
+							],
+							"path": [
+								"api",
+								"messaging"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ratings",
+			"item": [
+				{
+					"name": "Rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ratingType\": \"Restaurant\",\n  \"product\": \"65764b42187df4092835e0d8\",\n  \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6003/api/rating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"rating"
+							]
+						},
+						"description": "This API endpoint allows you to submit a new rating for a product. The HTTP POST request should be sent to [http://localhost:6003/api/rating](http://localhost:6003/api/rating) with the required payload in the raw request body.\n\n### Request Body\n\n- `ratingType`: (string) The type of rating.\n- `product`: (string) The product for which the rating is being submitted.\n- `rating`: (number) The actual rating value.\n    \n\n### Response\n\nUpon successful execution, the API returns a status code of 200 along with the following response body:\n\n- `status`: (boolean) Indicates the status of the operation.\n- `message`: (string) A message providing additional information about the operation.\n    \n\nExample:\n\n``` json\n{\n    \"status\": true,\n    \"message\": \"\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Rating",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ratingType\": \"Restaurant\",\n  \"product\": \"65764b42187df4092835e0d8\",\n  \"rating\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:6003/api/rating",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"rating"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-5uJi95bOh8GlALdZNNv6EZryQZs\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Dec 2023 08:49:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Rating added successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Check Rating",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ratingType\": \"Restaurant\",\n  \"product\": \"65764b42187df4092835e0d8\",\n  \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6003/api/rating?product=65412651465&ratingType=\"Restaurant\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6003",
+							"path": [
+								"api",
+								"rating"
+							],
+							"query": [
+								{
+									"key": "product",
+									"value": "65412651465"
+								},
+								{
+									"key": "ratingType",
+									"value": "\"Restaurant\""
+								}
+							]
+						},
+						"description": "# Rating API\n\nThis API endpoint allows you to retrieve the rating for a specific product, based on the product ID and rating type.\n\n## Request\n\n### Endpoint\n\n`GET` [http://localhost:6003/api/rating](http://localhost:6003/api/rating)\n\n### Query Parameters\n\n- `product` (string, required): The ID of the product for which the rating is to be retrieved.\n- `ratingType` (string, required): The type of rating to be retrieved, e.g., \"Restaurant\".\n    \n\n## Response\n\n- `status` (boolean): Indicates the status of the request, where `true` signifies success and `false` signifies failure.\n- `message` (string): Provides additional information about the status of the request.\n    \n\n### Examples of Response\n\n#### Success Response\n\n``` json\n{\n    \"status\": true,\n    \"message\": \"\"\n}\n\n ```\n\n#### Failure Response\n\n``` json\n{\n    \"status\": false,\n    \"message\": \"User has not rated this restaurant yet.\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Rating Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ratingType\": \"Restaurant\",\n  \"product\": \"65764b42187df4092835e0d8\",\n  \"rating\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:6003/api/rating?product=65412651465&ratingType=\"Restaurant\"",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6003",
+									"path": [
+										"api",
+										"rating"
+									],
+									"query": [
+										{
+											"key": "product",
+											"value": "65412651465"
+										},
+										{
+											"key": "ratingType",
+											"value": "\"Restaurant\""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-qsfYGUQ3fm+riD9Gdf7AxrlQNi8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Dec 2023 09:27:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"User has not rated this restaurant yet.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
