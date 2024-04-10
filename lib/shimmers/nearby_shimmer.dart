@@ -17,7 +17,7 @@ class NearbyShimmer extends StatelessWidget {
           itemBuilder: (context, index) {
             return ShimmerWidget(
                 shimmerWidth: width * 0.8,
-                shimmerHieght: 180.h,
+                shimmerHeight: 180.h,
                 shimmerRadius: 12);
           }),
     );

@@ -18,7 +18,7 @@ class FoodsListShimmer extends StatelessWidget {
           itemBuilder: (context, index) {
             return ShimmerWidget(
                 shimmerWidth: width,
-                shimmerHieght: 70.h,
+                shimmerHeight: 70.h,
                 shimmerRadius: 12);
           }),
     );

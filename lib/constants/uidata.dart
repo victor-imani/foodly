@@ -180,7 +180,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Sugar", "price": "0.50"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
+      "https://bakeplaysmile.com/wp-content/uploads/2022/06/tiramisu-square.jpg"
     ,
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
@@ -207,7 +207,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Pasta", "price": "3.00"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
+      "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-square640-v2.jpg"
     ,
     "__v": 2,
     "category": "6531209dbbe4998e90af3fef",
@@ -234,7 +234,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Vinaigrette", "price": "0.50"}
     ],
    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
+      "https://myveganminimalist.com/wp-content/uploads/2020/08/Vegan-Taco-Salad-16.jpg"
     ,
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
@@ -259,7 +259,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 3, "title": "Ketch up", "price": "0.50"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
+      "https://cdn.loveandlemons.com/wp-content/uploads/2023/07/margherita-pizza-500x375.jpg"
     ,
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
@@ -286,7 +286,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Ice", "price": "0.50"}
     ],
    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
+      "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2020/11/19/0/FNK_Strawberry-Banana-Smoothie_H_s4x3.jpg.rend.hgtvcom.616.462.suffix/1605818669813.jpeg"
     ,
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
@@ -319,7 +319,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Barbecue Sauce", "price": "1.00"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
+      "https://www.coles.com.au/content/dam/coles/cusp/recipes-inspiration/oct23_images/Oct23-Mixed-Grill-Platter-976x549.jpg"
     ,
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",

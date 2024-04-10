@@ -3,19 +3,19 @@ import 'package:shimmer/shimmer.dart';
 import '../constants/constants.dart';
 
 class ShimmerWidget extends StatelessWidget {
-  const ShimmerWidget({super.key, required this.shimmerWidth, required this.shimmerHieght, required this.shimmerRadius});
+  const ShimmerWidget({super.key, required this.shimmerWidth, required this.shimmerHeight, required this.shimmerRadius});
 
   final double shimmerWidth;
-  final double shimmerHieght;
+  final double shimmerHeight;
   final double shimmerRadius;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: shimmerWidth,
-      height: shimmerHieght,
+      height: shimmerHeight,
       padding: const EdgeInsets.only(right: 12, top: 8.0),
-      child: _buildShimmerLine(height: shimmerHieght-20, width: shimmerHieght-15, radius: shimmerRadius),
+      child: _buildShimmerLine(height: shimmerHeight-20, width: shimmerHeight-15, radius: shimmerRadius),
     );
   }
 

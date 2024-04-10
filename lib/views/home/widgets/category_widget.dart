@@ -6,34 +6,35 @@ import 'package:foodly/common/app_style.dart';
 import 'package:foodly/common/resusable_text.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:foodly/controllers/category_controller.dart';
+import 'package:foodly/models/categories.dart';
 import 'package:foodly/views/categories/all_categories.dart';
 import 'package:get/get.dart';
 
 class CategoryWidget extends StatelessWidget {
   CategoryWidget({
     super.key,
-     this.category,
+    required this.category,
   });
 
-   var category;
+   CategoriesModel category;
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(CategoryController());
     return GestureDetector(
       onTap: () {
-        if (controller.categoryValue == category['_id']) {
+        if (controller.categoryValue == category.id) {
           controller.updateCategory = '';
           controller.updateTitle = '';
-        } else if (category['value'] == 'more'){
+        } else if (category.value == 'more'){
           Get.to(() => const AllCategories(),
           transition: Transition.fadeIn,
           duration: const Duration(milliseconds: 800));
         }
         
         else{
-          controller.updateCategory = category['_id'];
-          controller.updateTitle = category['title'];
+          controller.updateCategory = category.id;
+          controller.updateTitle = category.title;
         }
       },
       child: Obx(() => Container(
@@ -42,15 +43,15 @@ class CategoryWidget extends StatelessWidget {
         width: width * 0.19,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(color: controller.categoryValue == category['_id']? kSecondary: kOffWhite , width: .5.w),
+          border: Border.all(color: controller.categoryValue == category.id? kSecondary: kOffWhite , width: .5.w),
         ),
         child: Column(
           children: [
             SizedBox(
               height: 35.h,
-              child: Image.network(category['imageUrl'], fit: BoxFit.contain,),
+              child: Image.network(category.imageUrl, fit: BoxFit.contain,),
             ),
-            ReusableText(text: category['title'], style: appStyle(12, kDark, FontWeight.normal))
+            ReusableText(text: category.title, style: appStyle(12, kDark, FontWeight.normal))
           ],
         ),
       ),)
